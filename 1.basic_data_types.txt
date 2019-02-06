@@ -1,0 +1,9 @@
+Fixnum: 3, 343
+Float: 3.43
+String: 'hello'
+Boolean: true(TrueClass), false(FalseClass)
+Array: [1,2] ['a', 'b'] # list
+Hash: { name: 'xx' } # 字典
+Symbol: :a, :'ss'
+Range: 1..10, 1...10 #<- 1 - 9不包含最后一位
+Regular Expression: /hello/i
