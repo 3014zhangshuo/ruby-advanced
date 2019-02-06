@@ -1,11 +1,12 @@
 class Preson
   @@bar = "123"
+
 	def initialize(name)
 		@name = name
 	end
 
 	def foo
-		return @name
+		@name
 	end
 
 	def self.bar
@@ -17,36 +18,29 @@ class Preson
 		@name = name
 	end
 
-
-
 	attr_accessor :name
 
-
-   def name
+  def name
    	@name
-   end
-
-   def name=(val)
-   	@name = val
-   end
-
-   module myutil
-   	def self.foobar
-   		puts "foobar"
-   	end
-   end
-
-   module Mixin
-
-   def foo
-   	puts "foo"
-   end
-
-   module ClassMethods
-	def bar
-		puts "bar"
-	end
+  end
 end
+
+module Myutil
+  def self.foobar
+ 	  puts "foobar"
+  end
+end
+
+module Mixin
+  def foo
+ 	  puts "foo"
+  end
+
+  module ClassMethods
+  	def bar
+  		puts "bar"
+  	end
+  end
 end
 
 class A
@@ -63,15 +57,8 @@ class MyClass
 	extend Mixin::ClassMethods
 end
 
-rails concern
-
-# like modal
-# comment modal
-# 用同一个功能
-# 放在module里面 共同调用
-
+# rails Concern
 module Foo
-
 	extend ActionSupport::Concern
 
 	included do
@@ -80,8 +67,8 @@ module Foo
 
 	class_methods do
 	  def self.xxx
-  	   # work
-      end
+  	  # work
+    end
 	end
 
   def self.xxx
@@ -93,39 +80,6 @@ module Foo
 
   def bar
   end
-
-end
-
-
-module xxx
-	def foo
-		puts "xx"
-	end
-end
-
-xxx.foo # module class 类似但是不能 new实例化
-
-
-module X
-	class A
-	end
-
-	module Z
-		A
-	end
-
-	class Array
-		def  ::Array #父类
-
-	end
-
-end
-
-z a = A
-
-
-def const_missing(name)
-	puts: "Missing #{name}"
 end
 
 # duck typing 即使不同类，只要介面一致就可以
@@ -148,11 +102,5 @@ birds.each do |duck|
 	duck.quack if duck.respond_to? :quack #呼叫是否有这个方法
 end
 
-java interface
-swift protocal
-
-# method 对象的方法
-
-# function 全域的方法
-
-# puts 方法 定义在 kernel module
+# java interface
+# swift protocal
